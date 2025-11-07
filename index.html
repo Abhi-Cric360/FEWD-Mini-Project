@@ -4,7 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <style>
+        *{
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+body {
+/* background: linear-gradient(to top right,#81d6f5,white); */
+background-color: rgb(110, 238, 247);
+}
+a{
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px 60px;
+}
+img{
+    height: 200px;
+    width:240px;
+}
+.button{
+    display: flex;
+    gap: 20px;
+}
+.signin,.signup{
+    background-color: #201a4e;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.signin{
+    background-color: transparent;
+    font-weight: bold;
+    border: 2px solid #201a4e;
+}
+.signup:hover {
+    transform: scale(1.05);
+}
+.signin:hover {
+    background-color: white;
+    border: 2px solid #201a4e;
+    transform: scale(1.05);
+}
+.signin a {
+    color: #201a4e; 
+}
+.signup a {
+    color:white; 
+}
+.signin:hover a {
+    color: #201a4e; 
+}
+main{
+    text-align: center;
+}
+p{
+    display: inline;
+    color: white;
+}
+.text{
+    font-size: 60px;
+    font-weight: bold;
+    color: #201a4e; 
+}
+span{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+}
+section{
+    margin-top: 35px;
+}
+section div{
+    text-align: center;
+}
+section div a {
+    background-color: #201a4e;
+    color: white;
+    font-size:20px;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -27,4 +114,5 @@
          <div><a href="main.html">Create Resume</a></div>
     </section>
 </body>
+
 </html>
