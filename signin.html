@@ -7,32 +7,87 @@
     <title>SignIn</title>
 </head>
 <body>
-    <header>
-        Temporary header
+
+
+    <header class="header">
+        <div class="logo">
+            <img src="Logo.jpg" alt="ResuMatic Logo">
+        </div>
+        <div class="button">
+            <div class="signin"><a href="signin.html">Sign In</a></div>
+            <div class="signup"><a href="signup.html">Sign Up</a></div>
+        </div>
     </header>
-    <div class="form-wrapper">
-    <form action="" method="post">
-      <div class="container">
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" required>
 
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter username" name="text" required> 
+    <div class="container">
+        <h1>Welcome back!</h1>
+        <p>Signin to continue using ResuMatic</p>
+
+        <form id="signInForm">
+            
+            
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required minlength="8" placeholder="Enter your Password">
+            </div>
+            
+
+            <div class="message" id="message"></div>
+
+            <div class="buttons">
+                <button type="submit" class="btn btn-signup">Sign In</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+
+        <div class="login-link">
+            New to ResuMatic? <a href="signup.html">SignUp</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signInForm').addEventListener('submit', function(e) {
+            e.preventDefault();
 
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const message = document.getElementById('message');
 
-        <button type="submit">Login</button>
-        <button type="reset">Reset</button>
-        <label>
-          <input type="checkbox" name="remember"> Remember me
-        </label>
-      </div>
-       <div class="container">
-        <button type="button" class="cancelbtn">Cancel</button>
-      </div>
-      </form>
-      </div>
+            if( password === '' || email === ''){
+                message.className='message error';
+                message.textContent = 'Please fill in all the fields';
+                return;
+            }
+            
+            const storedUser = JSON.parse(localStorage.getItem('resumaticUser'));
+
+            if (!storedUser) {
+                message.className = 'message error';
+                message.textContent = 'No account found. Please Sign up first.';
+                return;
+            }
+
+            if (email === storedUser.email && password === storedUser.password) {
+                message.className = 'message success';
+                message.textContent = `Welcome back, ${storedUser.firstname}! Redirecting...`;
+
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 1500);
+
+            } else {
+                message.className = 'message error';
+                message.textContent = 'Incorrect email or password.';
+            }
+            });
+
+          
+    </script>
 </body>
 </html>
