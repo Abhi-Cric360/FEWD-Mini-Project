@@ -3,45 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>SignIn</title>
+    <title>About Us - ResuMatic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5; 
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            background-color: #201a4e; 
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .top-nav .logo img {
+           height: 90px;
+    width: 140px;
+    margin-left: 40px;
+        }
+
+        .logout-btn {
+            padding: 8px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
+            color: #201a4e;
+        }
+
+        .main-area {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #201a4e; 
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px 15px;
+            color: #dcdcdc; 
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-link i {
+            font-size: 24px; 
+            margin-bottom: 8px;
+        }
+
+        .sidebar-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .sidebar-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: bold;
+        }
+
+        .content-wrapper {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto; 
+        }
+
+        .container {
+            margin: 0 auto; 
+            padding: 50px 70px;
+            width: 100%; 
+            max-width: 900px; 
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 38px;
+            color: #201a4e;
+            margin-bottom: 8px;
+            font-family: cursive; 
+        }
+
+        .container p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .login-link {
+            margin-top: 30px;
+            font-size: 15px;
+        }
+
+        .login-link a {
+            color: #201a4e;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .login-link a:hover {
+            color: #2a2266;
+        }
+
+        .dark-font {
+            color: black;
+            font-size: large;
+            text-align: center;
+            text-decoration: underline;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        #mid-text {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
-
-    <header class="header">
-        <div class="logo">
-            <img src="Resumatic.png" alt="ResuMatic Logo">
-        </div>
-        <div class="button">
-            <div class="signin"><a href="signin.html">Sign In</a></div>
-            <div class="signup"><a href="signup.html">Sign Up</a></div>
-        </div>
-    </header>
-
-    <div class="container">
-        <h1 id="mid-text">About us</h1>
-
-
-        <p>"At ResuMatic, we believe that building a great resume shouldn’t be complicated. Whether you’re a student or an experienced professional looking for your next opportunity, we make it effortless to create a resume that stands out."</p>
+    <div class="dashboard-container">
         
-        <h1>What we offer</h1>
-        <p>
+        <header class="top-nav">
+            <div class="logo">
+                <img src="resumatic white.png" alt="ResuMatic Logo">
+            </div>
+            <button class="logout-btn">Logout</button>
+        </header>
 
-<div class="dark-font">Easy-to-Use Templates</div>Choose from a variety of professional templates designed to impress recruiters.
+        <div class="main-area">
+            
+            <nav class="sidebar">
+                <a href="main.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back</span>
+                </a>
+                <a href="#" class="sidebar-link active">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About Us</span>
+                </a>
+            </nav>
 
+            <main class="content-wrapper">
+                
+                <div class="container">
+                    <h1 id="mid-text">About us</h1>
 
-<br>
-<div class="dark-font">Instant Downloads</div>Export your resume in multiple formats, ready to share or upload anywhere.
+                    <p>"At ResuMatic, we believe that building a great resume shouldn’t be complicated. Whether you’re a student or an experienced professional looking for your next opportunity, we make it effortless to create a resume that stands out."</p>
 
-<br>
-<div class="dark-font">Customization Made Simple</div>Personalize without having the need for designing skills.</p>
+                    <h1>What we offer</h1>
+                    <p>
+                        <div class="dark-font">Easy-to-Use Templates</div>
+                        Choose from a variety of professional templates designed to impress recruiters.
+                        <br>
+                        <div class="dark-font">Instant Downloads</div>
+                        Export your resume in multiple formats, ready to share or upload anywhere.
+                        <br>
+                        <div class="dark-font">Customization Made Simple</div>
+                        Personalize without having the need for designing skills.
+                    </p>
 
-        <div class="login-link">
-            New to ResuMatic? <a href="signup.html">SignUp</a>
+                    <div class="login-link">
+                        New to ResuMatic? <a href="signup.html">SignUp</a>
+                    </div>
+                </div>
+
+            </main>
         </div>
     </div>
 
 </body>
-
 </html>
