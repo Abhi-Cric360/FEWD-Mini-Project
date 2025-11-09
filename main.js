@@ -209,6 +209,17 @@ form.addEventListener('submit', function (e) {
         });
     }
 });
+const headersToStyle = document.querySelectorAll('.pcontact h3, .p-about h3');
+     headersToStyle.forEach(header => {
+     header.style.marginRight = '20px';
+   });
+document.querySelector('#upload-trigger').addEventListener('click', function () {
+    document.querySelector('#image-upload').click();
+});
+const header = document.querySelector('.p-skills h3');
+if (header) {
+  header.style.marginRight = '70px';
+}
 
 document.querySelector('#upload-trigger').addEventListener('click', function () {
     document.querySelector('#image-upload').click();
