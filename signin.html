@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signin.css">
     <title>SignIn</title>
 </head>
 <body>
-
-
     <header class="header">
         <div class="logo">
             <img src="Resumatic.png" alt="ResuMatic Logo">
         </div>
         <div class="button">
-            <div class="signin"><a href="signin.html">Sign In</a></div>
             <div class="signup"><a href="signup.html">Sign Up</a></div>
         </div>
     </header>
@@ -24,9 +21,6 @@
         <p>Signin to continue using ResuMatic</p>
 
         <form id="signInForm">
-            
-            
-            
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" required placeholder="Enter your email">
@@ -35,7 +29,6 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" required minlength="8" placeholder="Enter your Password">
             </div>
-            
 
             <div class="message" id="message"></div>
 
@@ -54,17 +47,16 @@
         document.getElementById('signInForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-
             const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value.trim();
             const message = document.getElementById('message');
 
-            if( password === '' || email === ''){
-                message.className='message error';
+            if (password === '' || email === '') {
+                message.className = 'message error';
                 message.textContent = 'Please fill in all the fields';
                 return;
             }
-            
+
             const storedUser = JSON.parse(localStorage.getItem('resumaticUser'));
 
             if (!storedUser) {
@@ -77,18 +69,14 @@
                 message.className = 'message success';
                 message.textContent = `Welcome back, ${storedUser.firstname}! Redirecting...`;
 
-            setTimeout(() => {
-                window.location.href = 'index.html'; 
-            }, 1500);
-
+                setTimeout(() => {
+                    window.location.href = 'main.html';
+                }, 1500);
             } else {
                 message.className = 'message error';
                 message.textContent = 'Incorrect email or password.';
             }
-            });
-
-          
+        });
     </script>
 </body>
 </html>
-
