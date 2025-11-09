@@ -13,13 +13,14 @@ body {
 }
 a { 
   text-decoration: none; 
+  color: white;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 90px;
+  padding: 0px 90px;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -48,18 +49,24 @@ a {
   background-color: transparent;
   border: 2.5px solid #201a4e;
   color: #201a4e;
+  
 }
 .signup {
   background-color: #201a4e;
   color: white;
-}
-.signin:hover {
-  background-color: white;
-
+  transition: 0.3s ease;
 }
 .signup:hover {
-  background-color: #2a2266;
+  background-color: white;
+    transform: scale(1.05);
+
+
 }
+.signup:hover a {
+  color: #201a4e;
+  
+}
+
 
 .container {
   margin: 80px auto;
@@ -101,11 +108,6 @@ input {
   border-radius: 8px;
   font-size: 16px;
   transition: all 0.3s ease;
-}
-input:focus {
-  outline: none;
-  border-color: #201a4e;
-  box-shadow: 0 0 0 4px rgba(32, 26, 78, 0.15);
 }
 
 .buttons {
@@ -169,24 +171,3 @@ input:focus {
   color: #27ae60; 
 }
 
-@media (max-width: 768px) {
-.header {
-    padding: 20px 30px;
-    flex-direction: column;
-    gap: 20px;
-}
-.logo img {
-    height: 140px;
-    width: 170px;
-}
-.container {
-    padding: 40px 30px;
-    margin: 50px auto;
-}
-.buttons {
-    flex-direction: column;
-}
-.btn {
-    width: 100%;
-}
-}
