@@ -5,7 +5,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 body {
-  background-image: url("https://raw.githubusercontent.com/creativetimofficial/public-assets/master/twcomponents/header.webp");
+  background-image: url("bg.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -170,4 +170,5 @@ input {
 .success { 
   color: #27ae60; 
 }
+
 
